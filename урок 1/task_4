@@ -1,0 +1,36 @@
+// 3. Вставить в страницу (в html документ) 
+// тег <select>. С помощью js добавить в этот 
+// select опции (option) под годы от 1960 по 2020.
+
+let select = document.getElementById('one');
+console.log(select);
+
+for (let i = 1960; i <= 2020; i++) {
+    let opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+    // console.log(opt);
+}
+
+// 4. Вставить в разметку html теги input и div
+//  используя js(через createElement).
+//  При обработке события нажатия клавиши на инпуте(например,
+// событие keyup, повешенное на инпут) в предусмотренный div
+// должна вписываться фраза "Клиент набирает: ВСЕ_ЧТО_НАБРАНО
+// В_ИНПУТЕ".Текст внутри инпута можно получить через input.value.
+
+ let input = document.createElement('input');
+ console.log(input);
+ let div = document.createElement('div');
+ console.log(div); 
+
+ document.querySelector('.two').appendChild(input);
+ document.querySelector('.two').appendChild(div);
+
+ let pusk = document.querySelector('input');
+ input.addEventListener('click', () => {
+    div.innerText = input.value;
+    console.log('Все, что набрано в инпуте')
+ });
+ 
