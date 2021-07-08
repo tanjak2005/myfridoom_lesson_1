@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   
+    <script>
+    // Сделать запрос за комментариями сюда 
+// https://jsonplaceholder.typicode.com/comments 
+// получив комментарии, отрезать и оставить только первые 30 
+// комментариев, и их отрисовать на странице (в любом виде), 
+// свойства name, email и body необходимо отрисовывать
+
+let xmlHttp = new XMLHttpRequest();
+xmlHttp.onload = function() {
+  let div = document.createElement('div');
+  document.body.appendChild(div);
+  let tasks = JSON.parse(xmlHttp.responseText);
+  for (let i = 0; i < 30; i++) {
+    div.textContent = tasks[i].name;
+    div.textContent = tasks[i].email;
+    div.textContent = tasks[i].body;
+  }
+}
+
+xmlHttp.open("GET", 'https://jsonplaceholder.typicode.com/comments');
+xmlHttp.send();
+</script>
+    
+</body>
+</html>
