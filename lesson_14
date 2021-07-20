@@ -1,0 +1,43 @@
+//1
+function enterNumber(number, one, two, five) {
+    let n = Math.abs(number);
+    n %= 100;
+    if (n >= 5 && n <= 20) {
+      return five;
+    }
+    n %= 10;
+    if (n === 1) {
+      return one;
+    }
+    if (n >= 2 && n <= 4) {
+      return two;
+    }
+    return five;
+  }
+
+
+  console.log(enterNumber(prompt(enterNumber()),'Джамшут', 'Джамшута', 'Джамшутов'));
+
+
+
+//2
+
+function Person(name, sity, age, gender, interests) {
+    this.name = name;
+    this.sity = sity;
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+    this.bio = function() {
+      console.log(this.name + ' из ' + this.sity + ' ему ' + this.age + ' года. Он любит ' + this.interests[0] + ' и ' + this.interests[1] + '.');
+    };
+   
+  }
+  let person1 = new Person('Энрики', 'Лондон', 30, 'мужчина', ['пробежки по утрам', 'свежевыжатый сок']);
+ 
+
+  person1['age']
+  person1.interests[1]
+  person1.bio()
+
+
